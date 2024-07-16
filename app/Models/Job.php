@@ -9,11 +9,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
-    use HasFactory; 
+    use HasFactory;
 
     //odwołanie do konkretnej tabeli w bazie danych, którą reprezentuje model
     protected $table = 'job_listing';
 
     //właściowość modelu Eloquent określająca, które atrybuty mogą być przypisywane masowo
     protected $fillable = ['title', 'salary'];
+
+    //metoda określająca relacje one-to-one pomiędzy rekordem tabeli jobs, a kluczem obcym tabeli employer
+    //oznacza to, że jedna oferta pracy posiada jednego pracowdawcę
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
 }
