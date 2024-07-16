@@ -3,40 +3,14 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\Model;
 
 
-class Job
+class Job extends Model
 {
-    public static function all(): array
-    {
-        return [
-            [
-                'id' => 1,
-                'title' => 'Director',
-                'salary' => '$50.000'
-            ],
-            [
-                'id' => 2,
-                'title' => 'Programmer',
-                'salary' => '$20.000'
-            ],
-            [
-                'id' => 3,
-                'title' => 'Teacher',
-                'salary' => '$5.000'
-            ]
-        ];
-    }
+    //odwołanie do konkretnej tabeli w bazie danych, którą reprezentuje model
+    protected $table = 'job_listing';
 
-    public static function find(int $id): ?array
-    {
-        $job = Arr::first(static::all(), fn ($job) => $job['id'] == $id);
-
-        if (!$job) {
-            abort(404);
-        }
-
-        return $job;
-    }
+    //właściowość modelu Eloquent określająca, które atrybuty mogą być przypisywane masowo
+    protected $fillable = ['title', 'salary'];
 }
