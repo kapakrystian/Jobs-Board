@@ -12,7 +12,7 @@ class Job extends Model
     use HasFactory;
 
     //odwołanie do konkretnej tabeli w bazie danych, którą reprezentuje model
-    protected $table = 'job_listing';
+    protected $table = 'job_listings';
 
     //właściowość modelu Eloquent określająca, które atrybuty mogą być przypisywane masowo
     protected $fillable = ['title', 'salary'];
@@ -22,5 +22,10 @@ class Job extends Model
     public function employer()
     {
         return $this->belongsTo(Employer::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, table: "job_tags", foreignPivotKey: "job_listings_id");
     }
 }

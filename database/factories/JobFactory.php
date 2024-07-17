@@ -19,9 +19,9 @@ class JobFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->boolean(70) ? fake()->jobTitle() : Job::all()->random()->title,
             'employer_id' => fake()->boolean(70) ? Employer::all()->random()->id : Employer::factory(),
-            'salary' => (string) round(fake()->numberBetween(1000, 15000), -3) . '$'
+            'title' => fake()->jobTitle(),
+            'salary' => (string) round(fake()->numberBetween(1000, 15000), -3) . '$',
         ];
     }
 }
