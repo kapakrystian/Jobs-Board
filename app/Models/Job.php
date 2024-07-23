@@ -15,7 +15,7 @@ class Job extends Model
     protected $table = 'job_listings';
 
     //właściowość modelu Eloquent określająca, które atrybuty mogą być przypisywane masowo
-    protected $fillable = ['title', 'salary'];
+    protected $fillable = ['employer_id', 'title', 'salary'];
 
     //metoda określająca relacje one-to-one pomiędzy rekordem tabeli jobs, a kluczem obcym tabeli employer
     //oznacza to, że jedna oferta pracy posiada jednego pracowdawcę
