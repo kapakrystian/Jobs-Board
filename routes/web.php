@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
+use Illuminate\Http\Request;
 
 
 Route::get('/', function () {
@@ -28,8 +29,11 @@ Route::get('/jobs/{id}', function ($id) {
     ]);
 });
 
-Route::post('/jobs', function () {
-    //TODO: validation...
+Route::post('/jobs', function (Request $request) {
+    $request->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required']
+    ]);
 
     Job::create([
         'title' => request('title'),
