@@ -11,7 +11,7 @@
           <x-form-field class="sm:col-span-4">
             <x-form-label for="first_name">First Name</x-form-label>
             <div class="mt-2">
-                <x-form-input name="first_name" id="first_name" required/>
+                <x-form-input name="first_name" id="first_name" type="text" required/>
             </div>
             <x-form-error name="first_name"/>
           </x-form-field>
@@ -19,7 +19,7 @@
           <x-form-field class="sm:col-span-4">
             <x-form-label for="last_name">Last Name</x-form-label>
             <div class="mt-2">
-                <x-form-input name="last_name" id="last_name" required/>
+                <x-form-input name="last_name" id="last_name" type="text" required/>
             </div>
             <x-form-error name="last_name"/>
           </x-form-field>
@@ -35,7 +35,7 @@
           <x-form-field class="sm:col-span-4">
             <x-form-label for="password">Password</x-form-label>
             <div class="mt-2">
-                <x-form-input name="password" id="password" required/>
+                <x-form-input name="password" id="password" type="password" required/>
             </div>
             <x-form-error name="password"/>
           </x-form-field>
@@ -43,7 +43,7 @@
           <x-form-field class="sm:col-span-4">
             <x-form-label for="password_confirmation">Confirm Password</x-form-label>
             <div class="mt-2">
-                <x-form-input name="password_confirmation" id="password_confirmation" required/>
+                <x-form-input name="password_confirmation" id="password_confirmation" type="password" required/>
             </div>
             <x-form-error name="password_confirmation"/>
           </x-form-field>
