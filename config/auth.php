@@ -99,6 +99,12 @@ return [
         ],
     ],
 
+    'aliases' => [
+        // Inne aliasy...
+        'Auth' => Illuminate\Support\Facades\Auth::class,
+    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout
